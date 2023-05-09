@@ -21,10 +21,12 @@
     <ClInclude Include="src\Engine.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\EngineCore\Log.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\EngineCore\Application.cpp">
       <Filter>src\EngineCore</Filter>
     </ClCompile>
+    <ClCompile Include="src\EngineCore\Log.cpp" />
   </ItemGroup>
 </Project>

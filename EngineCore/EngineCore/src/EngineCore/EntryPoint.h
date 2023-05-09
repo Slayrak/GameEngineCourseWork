@@ -6,6 +6,8 @@ extern EngineCore::Application* EngineCore::CreateApplication();
 
 int main(int argc, char** argv)
 {
+	EngineCore::Log::Init();
+
 	auto app = EngineCore::CreateApplication();
 	app->Run();
 	delete app;
