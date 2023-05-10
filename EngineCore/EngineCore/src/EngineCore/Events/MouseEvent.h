@@ -50,7 +50,7 @@ namespace EngineCore {
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	};
 
-	class MouseButtonEvent : public Event
+	class ENGINE_API MouseButtonEvent : public Event
 	{
 	protected:
 		MouseButtonEvent(int button)
@@ -79,7 +79,7 @@ namespace EngineCore {
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
-	class MouseButtonReleasedEvent : public MouseButtonEvent
+	class ENGINE_API MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonReleasedEvent(int button)
