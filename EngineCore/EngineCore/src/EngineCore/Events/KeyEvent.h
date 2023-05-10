@@ -25,7 +25,7 @@ namespace EngineCore
 	private:
 		int m_RepeatCount;
 	public:
-		KeyPressedEvent(const int keycode, int repeatCount)
+		KeyPressedEvent(int keycode, int repeatCount)
 			: KeyEvent(keycode), m_RepeatCount(repeatCount) {}
 
 		inline int GetRepeatCount() const { return m_RepeatCount; }
