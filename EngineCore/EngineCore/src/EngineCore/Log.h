@@ -3,8 +3,9 @@
 #include <memory>
 
 #include "Core.h"
-#include "C:/Users/322TO/University/MastersCourseWork/GameEngineCourseWork/EngineCore/EngineCore/vendor/spdlog/include/spdlog/spdlog.h"
+#include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
+#include "spdlog/fmt/ostr.h"
 
 //log macros
 #define ENGINE_TRACE_LOG(...) ::EngineCore::Log::GetCoreLogger()->trace(__VA_ARGS__)
