@@ -138,8 +138,10 @@
     <ClInclude Include="src\EngineCore\Core.h" />
     <ClInclude Include="src\Engine.h" />
     <ClInclude Include="src\EngineCore\EntryPoint.h" />
+    <ClInclude Include="src\epch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ecph.cpp" />
     <ClCompile Include="src\EngineCore\Log.cpp" />
     <ClCompile Include="src\EngineCore\Application.cpp" />
   </ItemGroup>
