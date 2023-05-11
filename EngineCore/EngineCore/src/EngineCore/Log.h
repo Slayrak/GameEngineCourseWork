@@ -3,7 +3,7 @@
 #include <memory>
 
 #include "Core.h"
-#include "spdlog/spdlog.h"
+#include "C:/Users/322TO/University/MastersCourseWork/GameEngineCourseWork/EngineCore/EngineCore/vendor/spdlog/include/spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 
 //log macros
