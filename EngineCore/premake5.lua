@@ -10,6 +10,11 @@ workspace "EngineCore"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLAD"] = "EngineCore/vendor/GLAD/include"
+
+include "EngineCore/vendor/GLAD"
+
 project "EngineCore"
     location "EngineCore"
     kind "SharedLib"
@@ -27,7 +32,13 @@ project "EngineCore"
     includedirs 
     {
         "EngineCore/vendor/spdlog/include",
-        "EngineCore/src"
+        "EngineCore/src",
+        "%{IncludeDir.GLAD}"
+    }
+
+    links
+    {
+        "GLAD"
     }
 
     filter "system:windows"
