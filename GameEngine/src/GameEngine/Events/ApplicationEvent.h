@@ -2,14 +2,10 @@
 
 #include "Event.h"
 
-#include <sstream>
+namespace GameEngine {
 
-namespace EngineCore {
-
-	class ENGINE_API WindowResizeEvent : public Event
+	class GameEngine_API WindowResizeEvent : public Event
 	{
-	private:
-		unsigned int m_Width, m_Height;
 	public:
 		WindowResizeEvent(unsigned int width, unsigned int height)
 			: m_Width(width), m_Height(height) {}
@@ -26,9 +22,11 @@ namespace EngineCore {
 
 		EVENT_CLASS_TYPE(WindowResize)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+	private:
+		unsigned int m_Width, m_Height;
 	};
 
-	class ENGINE_API WindowCloseEvent : public Event
+	class GameEngine_API WindowCloseEvent : public Event
 	{
 	public:
 		WindowCloseEvent() {}
@@ -37,28 +35,28 @@ namespace EngineCore {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class ENGINE_API AppTickEvent : public Event
+	class GameEngine_API AppTickEvent : public Event
 	{
 	public:
-		AppTickEvent() = default;
+		AppTickEvent() {}
 
 		EVENT_CLASS_TYPE(AppTick)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class ENGINE_API AppUpdateEvent : public Event
+	class GameEngine_API AppUpdateEvent : public Event
 	{
 	public:
-		AppUpdateEvent() = default;
+		AppUpdateEvent() {}
 
 		EVENT_CLASS_TYPE(AppUpdate)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class ENGINE_API AppRenderEvent : public Event
+	class GameEngine_API AppRenderEvent : public Event
 	{
 	public:
-		AppRenderEvent() = default;
+		AppRenderEvent() {}
 
 		EVENT_CLASS_TYPE(AppRender)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)

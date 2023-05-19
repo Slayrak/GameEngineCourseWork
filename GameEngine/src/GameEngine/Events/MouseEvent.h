@@ -2,14 +2,10 @@
 
 #include "Event.h"
 
-#include <sstream>
+namespace GameEngine {
 
-namespace EngineCore {
-
-	class ENGINE_API MouseMovedEvent : public Event
+	class GameEngine_API MouseMovedEvent : public Event
 	{
-	private:
-		float m_MouseX, m_MouseY;
 	public:
 		MouseMovedEvent(float x, float y)
 			: m_MouseX(x), m_MouseY(y) {}
@@ -26,12 +22,12 @@ namespace EngineCore {
 
 		EVENT_CLASS_TYPE(MouseMoved)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
+	private:
+		float m_MouseX, m_MouseY;
 	};
 
-	class ENGINE_API MouseScrolledEvent : public Event
+	class GameEngine_API MouseScrolledEvent : public Event
 	{
-	private:
-		float m_XOffset, m_YOffset;
 	public:
 		MouseScrolledEvent(float xOffset, float yOffset)
 			: m_XOffset(xOffset), m_YOffset(yOffset) {}
@@ -48,22 +44,24 @@ namespace EngineCore {
 
 		EVENT_CLASS_TYPE(MouseScrolled)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
+	private:
+		float m_XOffset, m_YOffset;
 	};
 
-	class ENGINE_API MouseButtonEvent : public Event
+	class GameEngine_API MouseButtonEvent : public Event
 	{
+	public:
+		inline int GetMouseButton() const { return m_Button; }
+
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	protected:
 		MouseButtonEvent(int button)
 			: m_Button(button) {}
 
 		int m_Button;
-	public:
-		inline int GetMouseButton() const { return m_Button; }
-
-		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput | EventCategoryMouseButton)
 	};
 
-	class ENGINE_API MouseButtonPressedEvent : public MouseButtonEvent
+	class GameEngine_API MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonPressedEvent(int button)
@@ -79,7 +77,7 @@ namespace EngineCore {
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
-	class ENGINE_API MouseButtonReleasedEvent : public MouseButtonEvent
+	class GameEngine_API MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonReleasedEvent(int button)

@@ -8,6 +8,13 @@
 
 #include <string>
 #include <sstream>
+#include <array>
 #include <vector>
 #include <unordered_map>
-#include <Unordered_set>
+#include <unordered_set>
+
+#include "GameEngine/Core/Log.h"
+
+#ifdef HZ_PLATFORM_WINDOWS
+	#include <Windows.h>
+#endif
